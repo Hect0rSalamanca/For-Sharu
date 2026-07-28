@@ -1,4 +1,3 @@
-/* --- BASE STYLES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,177 +5,205 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    /* Soft pink gradient over a beautiful picture of Tbilisi */
-    background: linear-gradient(rgba(255, 235, 238, 0.85), rgba(255, 224, 229, 0.9)), 
-                url('https://images.unsplash.com/photo-1582236371727-2c938be81335?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
-    background-size: cover;
-    color: #4a4a4a;
+    font-family: 'Nunito', sans-serif;
+    /* Grid paper background */
+    background-color: #fff4f7;
+    background-image: linear-gradient(#ffccd5 1px, transparent 1px), linear-gradient(90deg, #ffccd5 1px, transparent 1px);
+    background-size: 25px 25px;
+    color: #333;
     overflow-x: hidden;
 }
 
-/* --- GLASSMORPHISM (FROSTED GLASS) --- */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero .glass-panel {
-    display: inline-block;
-    padding: 30px 50px;
-}
-
+/* Typography */
 h1 {
-    font-size: 3rem;
-    color: #d16b81;
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+    color: #ff477e;
+    text-shadow: 3px 3px 0px #ffb3c6, 6px 6px 0px #fff;
+    transform: rotate(-2deg);
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    background: #ffeaee;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px dashed #ff477e;
+    transform: rotate(1deg);
 }
 
-/* --- LETTERS GRID --- */
+.scrapbook-header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    position: relative;
+    z-index: 2;
+}
+
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 40px 100px;
 }
 
 .letters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 }
 
+/* The Polaroid/Scrapbook Cards */
 .card {
-    padding: 25px;
-    text-align: center;
+    background: #fff;
+    width: 280px;
+    padding: 20px 20px 30px 20px;
+    box-shadow: 4px 6px 15px rgba(0,0,0,0.15);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-bottom: 5px solid #ffccd5;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(209, 107, 129, 0.2);
+    box-shadow: 8px 12px 25px rgba(0,0,0,0.2);
+    z-index: 10 !important;
+}
+
+/* Washi Tape Effect */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 100px;
+    height: 30px;
+    background: rgba(255, 182, 193, 0.7);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+/* Alternate tape colors */
+.card:nth-child(even)::before {
+    background: rgba(173, 216, 230, 0.7);
+    transform: translateX(-50%) rotate(4deg);
+}
+.card:nth-child(3n)::before {
+    background: rgba(255, 235, 153, 0.7);
 }
 
 .card h3 {
+    font-family: 'Fredoka One', cursive;
     font-size: 1.3rem;
+    color: #444;
     margin-bottom: 15px;
-    color: #333;
+    line-height: 1.3;
+    text-align: center;
 }
 
 .countdown {
-    font-size: 0.9rem;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ff477e;
     background: #ffe4e8;
-    padding: 8px 15px;
-    border-radius: 30px;
-    display: inline-block;
-    color: #d16b81;
-    font-weight: 700;
-    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 .locked-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
     display: block;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-/* Shake Animation for Locked Cards */
-.shake {
-    animation: shake 0.4s ease-in-out;
-}
+/* Shake Animation */
+.shake { animation: shake 0.4s ease-in-out; }
 @keyframes shake {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-8px); }
-    50% { transform: translateX(8px); }
-    75% { transform: translateX(-8px); }
+    25% { transform: translateX(-10px) rotate(-5deg); }
+    50% { transform: translateX(10px) rotate(5deg); }
+    75% { transform: translateX(-10px) rotate(-5deg); }
     100% { transform: translateX(0); }
 }
 
-/* --- MODAL (POPUP FOR OPENED LETTERS) --- */
+/* Modal Popup */
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
-.modal-content {
+.scrapbook-paper {
+    background: #fffdf5;
     max-width: 600px;
     width: 100%;
     padding: 40px;
     position: relative;
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
+    box-shadow: 10px 10px 0px rgba(255, 71, 126, 0.3);
+    border: 2px solid #333;
 }
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 28px;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
     font-weight: bold;
-    color: #aaa;
+    color: #333;
     cursor: pointer;
-    transition: color 0.2s;
 }
 
-.close-btn:hover {
-    color: #d16b81;
+.fun-font {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: #ff477e;
+    margin-bottom: 20px;
 }
 
 .handwritten {
     font-family: 'Caveat', cursive;
-    font-size: 1.8rem;
-    line-height: 1.5;
-    color: #2c3e50;
-    margin: 25px 0;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #2b2b2b;
     white-space: pre-wrap;
 }
 
 .joke-box {
-    background: rgba(209, 107, 129, 0.1);
-    border-left: 4px solid #d16b81;
+    background: #e6f7ff;
     padding: 15px;
-    font-size: 0.95rem;
-    border-radius: 0 10px 10px 0;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    border: 2px dashed #00a8ff;
+    color: #0077b6;
+    transform: rotate(1deg);
 }
 
-/* --- FLOATING STICKERS --- */
-.sticker {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
-    z-index: -1;
+/* Floating CDN Stickers */
+.floating-sticker {
+    position: fixed;
+    pointer-events: none; /* So she can click through them */
+    z-index: 50;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    animation: float-around infinite ease-in-out;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(10deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+@keyframes float-around {
+    0% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-30px) rotate(15deg) scale(1.1); }
+    100% { transform: translateY(0px) rotate(0deg) scale(1); }
 }
