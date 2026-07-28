@@ -143,21 +143,28 @@ window.onclick = function(event) {
 }
 
 // --- 5. FLOATING STICKERS GENERATOR ---
-const stickers = ['🦷', '✨', '✈️', '🤍', '🌸', '🩺', '☕'];
+// --- 5. CUSTOM IMAGE FLOATING STICKERS ---
+// Put the exact names of the files you uploaded to GitHub here
+const stickerImages = ['sticker1.png', 'sticker2.png', 'sticker3.png']; 
 const container = document.getElementById("floating-stickers");
 
 for (let i = 0; i < 15; i++) {
-    let span = document.createElement("span");
-    span.innerText = stickers[Math.floor(Math.random() * stickers.length)];
-    span.className = "sticker";
+    let img = document.createElement("img");
+    
+    // Pick a random image from your list
+    img.src = stickerImages[Math.floor(Math.random() * stickerImages.length)];
+    img.className = "sticker";
+    
+    // Size the images so they aren't massive
+    img.style.width = "50px"; 
+    img.style.height = "auto";
     
     // Random positioning
-    span.style.left = Math.random() * 100 + "vw";
-    span.style.top = Math.random() * 100 + "vh";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.top = Math.random() * 100 + "vh";
     
-    // Random animation delay and duration to make it look organic
-    span.style.animationDelay = (Math.random() * 5) + "s";
-    span.style.animationDuration = (6 + Math.random() * 4) + "s";
+    // Random animation delay
+    img.style.animationDelay = (Math.random() * 5) + "s";
+    img.style.animationDuration = (6 + Math.random() * 4) + "s";
     
-    container.appendChild(span);
-}
+    container.appendChild(img);
