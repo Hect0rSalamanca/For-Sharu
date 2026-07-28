@@ -168,3 +168,4 @@ for (let i = 0; i < 15; i++) {
     img.style.animationDuration = (6 + Math.random() * 4) + "s";
     
     container.appendChild(img);
+}
