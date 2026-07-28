@@ -145,7 +145,7 @@ window.onclick = function(event) {
 // --- 5. FLOATING STICKERS GENERATOR ---
 // --- 5. CUSTOM IMAGE FLOATING STICKERS ---
 // Put the exact names of the files you uploaded to GitHub here
-const stickerImages = ['sticker1.png', 'sticker2.png', 'sticker3.png']; 
+const stickerImages = ['pippo sticker sharu.png', 'tummy cat sharu.png', 'bunny sticker sharu.png']; 
 const container = document.getElementById("floating-stickers");
 
 for (let i = 0; i < 15; i++) {
