@@ -2,33 +2,61 @@
 // Change the targetDate to when you want her to be able to open them.
 // Format must be: "YYYY-MM-DDTHH:MM:SS"
 const letterData = [
-    {
-        id: "letter-1",
-        title: "Open Before You Leave Goa 🌴",
-        targetDate: "2026-07-01T00:00:00", // Past date so you can test opening it!
-        content: "Hey beautiful,\n\nI wanted you to have this open right away. You are about to embark on the craziest 5 years of your life. Leaving Goa for Georgia is a massive step, but you are more than ready for it. \n\nWhenever things get tough, I want you to come back to this website. I've written you a bunch of letters for the specific moments I know you'll need them. I'm so incredibly proud of you.",
-        joke: "Why do dentists make good problem solvers? Because they always get to the root of the problem. 🦷"
+     {
+        id: "letter-test",
+        title: "Open this night 🎉",
+        targetDate: "2026-07-01T00:00:00", 
+        content: "nlah blah ",
+        joke: "nlah blah"
     },
     {
-        id: "letter-2",
-        title: "Open When You Land in Tbilisi ✈️",
-        targetDate: "2026-08-15T12:00:00", // Adjust to her flight date
-        content: "Dr. Sharayu has officially touched down!\n\nTake a deep breath. Look at the mountains. I know it's overwhelming right now, but you made it. Unpack your bags, wrap yourself in that cozy blanket I gave you, and get some sleep. \n\nYour new life starts today.",
-        joke: "I know you're tired, but don't forget to brush tonight! Plaque doesn't care about time zones."
+        id: "letter-bday",
+        title: "Open on your birthday night 🎉",
+        targetDate: "2026-08-02T20:00:00", 
+        content: "nlah blah ",
+        joke: "nlah blah"
     },
     {
-        id: "letter-3",
-        title: "First Day at SEU 🏫",
-        targetDate: "2026-09-01T07:00:00", // Adjust to SEU start date
-        content: "Happy first day of university!\n\nWalk into Georgian National University like you own the place. You worked so hard to get into this BDS program, and you deserve to be exactly where you are today. \n\nGo crush those anatomy labs.",
-        joke: "Remember: Enamel is the hardest substance in the human body, but your stubbornness is a close second. 😉"
+        id: "letter-freezing",
+        title: "Open when you miss me in freezing Georgia 🥶",
+        targetDate: "2026-12-01T00:00:00", 
+        content: "",
+        joke: ""
     },
     {
-        id: "letter-4",
-        title: "When You're Freezing & Homesick ❄️",
-        targetDate: "2026-11-20T00:00:00", // Winter date
-        content: "Is it sub-zero over there? I'm sitting here in Goa missing you like crazy.\n\nI know the cold makes being far from home feel a hundred times worse. But remember why you went there. Every freezing morning walking to SEU is one step closer to becoming a dentist. \n\nCall me when you read this, I don't care what time it is.",
-        joke: "Why did the tooth go to the snowstorm? To get a little cap! 🥶 (I know, awful. But it made you smile)."
+        id: "letter-bds-hard",
+        title: "Open when BDS is kicking your ass 📚",
+        targetDate: "2026-10-15T00:00:00", 
+        content: "",
+        joke: ""
+    },
+    {
+        id: "letter-food",
+        title: "Open when you are craving Goan food 🍛",
+        targetDate: "2026-09-20T00:00:00", 
+        content: "",
+        joke: ""
+    },
+    {
+        id: "letter-fight",
+        title: "Open after our first stupid time-zone fight 🙄",
+        targetDate: "2026-11-01T00:00:00", 
+        content: "",
+        joke: ""
+    },
+    {
+        id: "letter-doubt",
+        title: "Open when you question why you moved 5,000 km away ✈️",
+        targetDate: "2026-09-10T00:00:00", 
+        content: "",
+        joke: ""
+    },
+    {
+        id: "letter-win",
+        title: "Open when you ace your first practical at SEU 🏆",
+        targetDate: "2026-10-30T00:00:00", 
+        content: "",
+        joke: ""
     }
 ];
 
