@@ -100,7 +100,7 @@ const letterData = [
         id: "letter-bday",
         title: "Open on your birthday night 🎂",
         targetDate: "2026-08-02T20:00:00",
-        content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your irst with me and it feels everything but a birthday because we both know whats "
+        content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your first with me and it feels everything but a birthday because we both know how huge of a step youre taking, but before we start stressing and arguing, let me be hoenst with you. I am incredibly proud of you, you have been such an ideal human for the past month from mkaing stern decisoins about your education to dealing with every single logistics without taking much help from you parents and well obv dealing with me cus ik i have been difficult. The effort youre putting in almost guarantees your sucess. You are going to be an amazing Dentist and I cant wait to attenf your graduation 🥰.   "
     },
     {
         id: "letter-test",
