@@ -1,53 +1,134 @@
-// --- 0. YOUR CUSTOM MEDIA CONFIG ---
-// Put your picture filenames here (in the same folder as index.html)
-const bgPhotos = [
-    "photo1.jpg", 
-    "photo2.jpg", 
-    "photo3.jpg", 
-    "photo4.jpg"
+// --- 0. BACKGROUND POLAROIDS (Faded background décor) ---
+const bgPhotos = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg"];
+
+// --- 1. THE 50 REASONS WHY I LOVE YOU (Natural boyfriend English!) ---
+const reasonsList = [
+    "Your eyes—especially when you're looking at me and trying not to smile.",
+    "The way you care about the people you love without hesitating.",
+    "How cute you look when you're super focused on studying.",
+    "Your laugh. It literally turns my worst days around immediately.",
+    "You don't take any nonsense from anyone and I respect that so much.",
+    "Your pretty eyes when they get sleepy.",
+    "The way you randomly check up on me just to see if I've eaten.",
+    "How hard you're working for BDS even when it's kicking your ass.",
+    "You have the warmest vibe. Being around you just feels like home.",
+    "How adorable you get when you're excited about food.",
+    "Your smile—it is effortlessly the prettiest thing I've ever seen.",
+    "The little faces you make when you're confused or trying to concentrate.",
+    "How proud I feel just getting to tell people that you're my girl.",
+    "You listen to me rant and never make me feel stupid.",
+    "Even when you're stressed out, you still treat people with kindness.",
+    "Your sense of humor. You actually get my weird jokes.",
+    "How you make 5,000 km of distance feel like nothing when we talk.",
+    "You're not just my girlfriend, you're genuinely my best friend.",
+    "The cute way you argue when you know you're 100% right.",
+    "Your hair, your face, your vibe—just everything about you.",
+    "How safe and understood you make me feel every single day.",
+    "The fact that you're brave enough to move to Tbilisi to chase your dream.",
+    "Your eyes when you laugh really hard.",
+    "How honest you are with me, even when it's hard things to say.",
+    "You make boring everyday stuff feel fun just by being there.",
+    "The way you say my name when you're trying to get my attention.",
+    "How passionate you are about your future and becoming a doctor.",
+    "You never let me give up on myself.",
+    "The cute little random texts you send me out of nowhere.",
+    "How comfortable we can be in complete silence together.",
+    "You're gorgeous even when you're wearing oversized clothes and messy hair.",
+    "The way you get mad at me when I don't take care of myself.",
+    "You always share your food (well, most of the time).",
+    "Your voice is my favorite sound to hear after a long tiring day.",
+    "How smart you are—you surprise me all the time.",
+    "The way you always know when something is bothering me before I even say it.",
+    "How patient you are with me when I'm being annoying.",
+    "You make me want to be a better man for you every single day.",
+    "The way you look at me like I actually matter.",
+    "How you can be super soft and sweet, but also total boss-energy.",
+    "Your little habits that you don't even realize you do.",
+    "How much you love the simple things in life.",
+    "The way you support me without me ever having to ask.",
+    "You give the absolute best hugs.",
+    "Your cute sleepy voice on late-night calls.",
+    "How you manage to stay strong even when you're homesick.",
+    "You're literally the most beautiful girl in any room you walk into.",
+    "The way you make every memory we have together unforgettable.",
+    "You're my favorite person to annoy.",
+    "Just because you are you. I wouldn't change a single thing about you."
 ];
 
-// --- 1. LETTERS DATA ---
+// --- 2. LOVE COUPONS DATA ---
+const couponsData = [
+    { id: 1, title: "1 Free Food Delivery 🍕", desc: "I'll order whatever you're craving straight to your hostel." },
+    { id: 2, title: "1 Hour BDS Vent Session 🦷", desc: "Rant about dental anatomy, professors, or exams. I will just listen and nod." },
+    { id: 3, title: "1 Free Argument Win 🏳️", desc: "Even if I'm right, you win this one. Zero questions asked." },
+    { id: 4, title: "1 Persistent Wake-Up Call ⏰", desc: "I will spam call your phone so you don't oversleep for your practicals." },
+    { id: 5, title: "1 Virtual Movie Date 🍿", desc: "We pick a movie and hit play at the exact same second on video call." },
+    { id: 6, title: "1 Late Night Study Buddy 📚", desc: "I'll stay on video call while you study just to keep you company." }
+];
+
+// --- 3. FLIP POLAROIDS (#10 to #30 = 21 Photos) ---
+const polaroidsData = [];
+const sampleNotes = [
+    "You looked so pretty here I actually forgot what I was saying.",
+    "One of my favorite memories with you ever.",
+    "I keep this picture on my phone just to look at when I miss you.",
+    "Still can't believe I got lucky enough to pull you.",
+    "You were laughing so hard here—I love this day.",
+    "My absolute favorite look on you.",
+    "Remember this? We need to recreate this as soon as you're back.",
+    "You make everything look effortless.",
+    "Pure happiness right here.",
+    "I brag about you to everyone, just so you know."
+];
+
+for (let i = 10; i <= 30; i++) {
+    polaroidsData.push({
+        num: i,
+        img: `photo${i}.jpg`, // Ensure you have photo10.jpg to photo30.jpg, or they will fallback cleanly
+        note: sampleNotes[(i - 10) % sampleNotes.length]
+    });
+}
+
+// --- 4. TIME CAPSULE LETTERS DATA ---
 const letterData = [
     {
         id: "letter-bday",
         title: "Open on your birthday night 🎂",
-        targetDate: "2026-08-02T20:00:00", 
-        content: "Write your birthday message here..."
+        targetDate: "2026-08-02T20:00:00",
+        content: "Happy birthday my love! Even though you're in Tbilisi..."
     },
     {
         id: "letter-freezing",
-        title: "Open when you miss me in freezing Georgia 🥶",
-        targetDate: "2026-12-01T00:00:00", 
-        content: "Write what you want to say when she's cold and homesick..."
+        title: "Open when Georgia gets freezing cold 🥶",
+        targetDate: "2026-12-01T00:00:00",
+        content: "Put on a hoodie, make some hot tea, and read this..."
     },
     {
         id: "letter-bds-hard",
         title: "Open when BDS is kicking your ass 🦷",
-        targetDate: "2026-10-15T00:00:00", 
-        content: "Write some encouragement for her dental exams here..."
+        targetDate: "2026-10-15T00:00:00",
+        content: "I know dentistry is brutal right now, but remember how hard you worked..."
     },
     {
         id: "letter-food",
         title: "Open when craving Goan food & ramen 🍜",
-        targetDate: "2026-09-20T00:00:00", 
-        content: "Write something about food here..."
+        targetDate: "2026-09-20T00:00:00",
+        content: "Hostel food sucks, I know. But the second you're back..."
     },
     {
         id: "letter-doubt",
         title: "Open when questioning moving 5,000 km away ✈️",
-        targetDate: "2026-09-10T00:00:00", 
-        content: "Write a reality check on how proud you are of her..."
+        targetDate: "2026-09-10T00:00:00",
+        content: "Moving to another country at our age is scary as hell, but I am so proud..."
     },
     {
         id: "letter-win",
-        title: "Open when you ace your first practical at SEU 🏆",
-        targetDate: "2026-10-30T00:00:00", 
-        content: "Write your celebration message here..."
+        title: "Open when you ace your first SEU practical 🏆",
+        targetDate: "2026-10-30T00:00:00",
+        content: "I TOLD YOU SO! You're going to be the best dentist ever..."
     }
 ];
 
-// --- 2. AUDIO PLAYER LOGIC ---
+// --- 5. AUDIO PLAYER ---
 const audio = document.getElementById("bg-music");
 const musicToggle = document.getElementById("music-toggle");
 const musicText = document.getElementById("music-text");
@@ -58,13 +139,9 @@ function startMusic() {
         audio.play().then(() => {
             isPlaying = true;
             musicText.innerText = "Playing Our Song 🎶";
-        }).catch(() => {
-            // Browser autoplay restrictions handled gracefully
-        });
+        }).catch(() => {});
     }
 }
-
-// Auto-start music on first interaction anywhere on the page
 document.body.addEventListener("click", startMusic, { once: true });
 
 musicToggle.addEventListener("click", (e) => {
@@ -81,27 +158,89 @@ musicToggle.addEventListener("click", (e) => {
     }
 });
 
-// --- 3. RENDER CARDS & COUNTDOWNS ---
-const grid = document.getElementById("letters-grid");
+// --- 6. RENDER 50 REASONS JAR ---
+const jarBtn = document.getElementById("jar-btn");
+const reasonDisplay = document.getElementById("reason-display");
+const reasonText = document.getElementById("reason-text");
+const anotherReasonBtn = document.getElementById("another-reason-btn");
+
+function showRandomReason() {
+    const randomIndex = Math.floor(Math.random() * reasonsList.length);
+    reasonText.innerText = `"${reasonsList[randomIndex]}"`;
+    reasonDisplay.classList.remove("hidden");
+}
+
+jarBtn.addEventListener("click", showRandomReason);
+anotherReasonBtn.addEventListener("click", showRandomReason);
+
+// --- 7. RENDER LOVE COUPONS ---
+const couponsGrid = document.getElementById("coupons-grid");
+
+couponsData.forEach((coupon) => {
+    const card = document.createElement("div");
+    card.className = "coupon-card";
+    card.innerHTML = `
+        <div class="coupon-info">
+            <h4>${coupon.title}</h4>
+            <p>${coupon.desc}</p>
+        </div>
+        <div class="coupon-status">TAP TO REDEEM</div>
+    `;
+    
+    card.addEventListener("click", () => {
+        if (!card.classList.contains("redeemed")) {
+            card.classList.add("redeemed");
+            card.querySelector(".coupon-status").innerText = "💖 REDEEMED!";
+        }
+    });
+    
+    couponsGrid.appendChild(card);
+});
+
+// --- 8. RENDER HORIZONTAL FLIP POLAROIDS (#10 to #30) ---
+const polaroidSlider = document.getElementById("polaroid-slider");
+
+polaroidsData.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "flip-card";
+    card.innerHTML = `
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="${item.img}" alt="Memory #${item.num}" onerror="this.src='https://placehold.co/200x220/ffe3eb/e64980?text=Photo+${item.num}';">
+                <div class="polaroid-number">#${item.num}</div>
+            </div>
+            <div class="flip-card-back">
+                <div class="polaroid-note">"${item.note}"</div>
+                <div class="flip-hint">Tap to flip back</div>
+            </div>
+        </div>
+    `;
+    
+    card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+    });
+    
+    polaroidSlider.appendChild(card);
+});
+
+// --- 9. RENDER LETTERS & COUNTDOWNS ---
+const lettersGrid = document.getElementById("letters-grid");
 
 letterData.forEach((letter) => {
     const card = document.createElement("div");
     card.className = "card";
     card.id = `card-${letter.id}`;
-    
     card.innerHTML = `
         <span class="card-icon" id="icon-${letter.id}">🔒</span>
         <h3>${letter.title}</h3>
-        <div class="countdown" id="cd-${letter.id}">Checking date...</div>
+        <div class="countdown" id="cd-${letter.id}">Checking...</div>
     `;
-    
     card.addEventListener("click", () => handleCardClick(letter));
-    grid.appendChild(card);
+    lettersGrid.appendChild(card);
 });
 
 function updateCountdowns() {
     const now = new Date().getTime();
-
     letterData.forEach((letter) => {
         const target = new Date(letter.targetDate).getTime();
         const distance = target - now;
@@ -116,19 +255,14 @@ function updateCountdowns() {
         } else {
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            
-            if (days > 0) {
-                cdElement.innerHTML = `Unlocks in ${days}d ${hours}h`;
-            } else {
-                cdElement.innerHTML = `Unlocks in ${hours} hours`;
-            }
+            cdElement.innerHTML = days > 0 ? `Unlocks in ${days}d ${hours}h` : `Unlocks in ${hours}h`;
         }
     });
 }
 updateCountdowns();
 setInterval(updateCountdowns, 60000);
 
-// --- 4. MODAL LOGIC ---
+// --- 10. MODAL POPUP LOGIC ---
 const modal = document.getElementById("letter-modal");
 const closeBtn = document.querySelector(".close-btn");
 
@@ -153,31 +287,29 @@ window.onclick = (event) => {
     if (event.target == modal) modal.style.display = "none";
 };
 
-// --- 5. SCATTERED BACKGROUND POLAROIDS ---
+// --- 11. SCATTERED BACKGROUND POLAROIDS (Ambient Décor) ---
 const bgContainer = document.getElementById("bg-photos-container");
 const polaroidPositions = [
-    { top: "8%", left: "3%", rotate: "-12deg" },
-    { top: "65%", left: "4%", rotate: "8deg" },
-    { top: "12%", right: "4%", rotate: "10deg" },
-    { top: "70%", right: "5%", rotate: "-7deg" }
+    { top: "6%", left: "3%", rotate: "-10deg" },
+    { top: "68%", left: "4%", rotate: "8deg" },
+    { top: "10%", right: "4%", rotate: "10deg" },
+    { top: "72%", right: "5%", rotate: "-6deg" }
 ];
 
 bgPhotos.forEach((src, index) => {
     if (index >= polaroidPositions.length) return;
     const pos = polaroidPositions[index];
-    
     const div = document.createElement("div");
     div.className = "bg-polaroid";
     div.style.top = pos.top;
     if (pos.left) div.style.left = pos.left;
     if (pos.right) div.style.right = pos.right;
     div.style.transform = `rotate(${pos.rotate})`;
-
     div.innerHTML = `<img src="${src}" alt="Memory" onerror="this.parentElement.style.display='none';">`;
     bgContainer.appendChild(div);
 });
 
-// --- 6. INTERACTIVE FLOATING STICKERS ---
+// --- 12. FLOATING CUTESY INTERACTIVE STICKERS ---
 const stickerAssets = [
     "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Cat%20Face.png",
     "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Bouquet.png",
@@ -191,31 +323,27 @@ const stickerAssets = [
 
 const stickerContainer = document.getElementById("floating-stickers");
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 14; i++) {
     let img = document.createElement("img");
     img.src = stickerAssets[i % stickerAssets.length];
     img.className = "floating-sticker";
     
-    let size = Math.floor(Math.random() * 22) + 42; // 42px to 64px
+    let size = Math.floor(Math.random() * 18) + 38;
     img.style.width = size + "px";
-    img.style.left = (Math.random() * 88 + 4) + "vw";
-    img.style.top = (Math.random() * 88 + 4) + "vh";
+    img.style.left = (Math.random() * 86 + 5) + "vw";
+    img.style.top = (Math.random() * 86 + 5) + "vh";
     img.style.animationDelay = (Math.random() * 4) + "s";
     img.style.animationDuration = (6 + Math.random() * 5) + "s";
     
-    // Interactive: stickers bounce away / spin when touched or hovered
     img.addEventListener("mouseover", () => {
-        const randomX = (Math.random() - 0.5) * 160;
-        const randomY = (Math.random() - 0.5) * 160;
-        const randomRotate = (Math.random() - 0.5) * 360;
-        img.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg) scale(1.2)`;
+        const randomX = (Math.random() - 0.5) * 140;
+        const randomY = (Math.random() - 0.5) * 140;
+        img.style.transform = `translate(${randomX}px, ${randomY}px) scale(1.15)`;
     });
 
     img.addEventListener("click", () => {
-        img.style.transform = "scale(1.5) rotate(360deg)";
-        setTimeout(() => {
-            img.style.transform = "scale(1) rotate(0deg)";
-        }, 500);
+        img.style.transform = "scale(1.4) rotate(360deg)";
+        setTimeout(() => img.style.transform = "scale(1) rotate(0deg)", 400);
     });
 
     stickerContainer.appendChild(img);
