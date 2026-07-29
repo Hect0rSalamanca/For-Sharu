@@ -5,149 +5,290 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5;
+    color: #4a2835;
+    min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Subtle, expensive ambient lighting effect */
-.ambient-background {
+/* Background Warm Blush Gradient */
+.glow-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 50% 0%, rgba(45, 20, 30, 0.4) 0%, rgba(10, 10, 10, 1) 70%);
-    z-index: -1;
+    background: 
+        radial-gradient(circle at 10% 15%, rgba(255, 182, 193, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(255, 192, 203, 0.45) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(255, 240, 245, 0.7) 0%, transparent 65%);
+    z-index: -3;
 }
 
-/* Typography */
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    font-weight: 400;
-    letter-spacing: -1px;
-    color: #f4f4f4;
-    margin: 10px 0;
-}
-
-.eyebrow, .modal-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #a89f91;
-    font-weight: 500;
-}
-
-.subtitle {
-    font-size: 1rem;
-    font-weight: 300;
-    color: #888;
-    letter-spacing: 0.5px;
-}
-
-.divider {
-    width: 40px;
-    height: 1px;
-    background-color: #d4c4a8; /* Champagne gold */
-    margin: 20px auto;
-}
-
-.editorial-header {
-    text-align: center;
-    padding: 10vh 20px 5vh;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px 100px;
-}
-
-/* The Luxury Grid */
-.luxury-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-/* Premium Card Styling */
-.card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 40px 30px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
+/* Background Memory Polaroids (Soft & subtle) */
+#bg-photos-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2;
     overflow: hidden;
 }
 
+.bg-polaroid {
+    position: absolute;
+    width: 220px;
+    height: 260px;
+    background: #ffffff;
+    padding: 12px 12px 35px 12px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    opacity: 0.18; /* Low opacity so text is easy to read */
+    transform: rotate(-5deg);
+    transition: opacity 0.3s ease;
+}
+
+.bg-polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Floating Interactive Stickers */
+#floating-stickers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-sticker {
+    position: absolute;
+    filter: drop-shadow(0 6px 10px rgba(230, 150, 170, 0.25));
+    animation: floatSlow infinite ease-in-out;
+    cursor: pointer;
+    pointer-events: auto; /* Allows hover/click interaction */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes floatSlow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Music Toggle Pill */
+.music-pill {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffe3eb;
+    padding: 10px 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d6336c;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(230, 150, 170, 0.2);
+    transition: all 0.2s ease;
+}
+
+.music-pill:hover {
+    transform: scale(1.05);
+    background: #ffffff;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 70px 20px 25px;
+}
+
+.badge {
+    display: inline-block;
+    background: #ffe3eb;
+    color: #e64980;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3.4rem;
+    color: #4a2835;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #7a5c66;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 10px 20px 80px;
+}
+
+/* Spotify Special Section */
+.spotify-section {
+    margin-bottom: 40px;
+}
+
+.spotify-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 2px solid #ffe3eb;
+    border-radius: 24px;
+    padding: 25px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(230, 150, 170, 0.15);
+}
+
+.spotify-info .tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #e64980;
+    letter-spacing: 1.5px;
+}
+
+.spotify-info h3 {
+    font-size: 1.4rem;
+    color: #3d232e;
+    margin: 5px 0;
+}
+
+.spotify-info p {
+    font-size: 0.95rem;
+    color: #7a5c66;
+}
+
+.spotify-code-wrapper {
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 12px;
+    border: 1px solid #ffd1df;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.spotify-code-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Letters Grid */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 2px solid #ffe8f0;
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(230, 150, 170, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
 .card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(212, 196, 168, 0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(230, 150, 170, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #ffd1df;
+}
+
+.card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #f4f4f4;
-    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: #3d232e;
+    margin-bottom: 15px;
     line-height: 1.4;
+    font-weight: 700;
 }
 
 .countdown {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #a89f91;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d6336c;
+    background: #fff0f5;
+    padding: 8px 14px;
+    border-radius: 15px;
+    display: inline-block;
 }
 
-.locked-icon {
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-/* Minimalist Shake Animation for Locked State */
-.shake { animation: subtle-shake 0.4s ease; }
-@keyframes subtle-shake {
+/* Shake Animation for Locked Cards */
+.shake { animation: cardShake 0.4s ease-in-out; }
+@keyframes cardShake {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-3px); }
-    75% { transform: translateX(3px); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
 }
 
-/* --- Premium Modal --- */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(60, 30, 42, 0.4);
+    backdrop-filter: blur(8px);
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
-.premium-paper {
-    background: #111;
-    border: 1px solid rgba(212, 196, 168, 0.2);
-    max-width: 650px;
+.glass-card {
+    background: #fffdfd;
+    border-radius: 28px;
+    max-width: 580px;
     width: 100%;
-    padding: 60px;
+    padding: 45px 35px;
     position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ffe3eb;
     max-height: 85vh;
     overflow-y: auto;
 }
@@ -155,37 +296,35 @@ h1 {
 .close-btn {
     position: absolute;
     top: 20px;
-    right: 30px;
-    font-size: 30px;
-    font-weight: 300;
-    color: #666;
+    right: 25px;
+    font-size: 28px;
+    color: #a3828d;
     cursor: pointer;
-    transition: color 0.3s ease;
 }
 
-.close-btn:hover { color: #d4c4a8; }
-
-.serif-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #f4f4f4;
-    margin: 15px 0 25px;
-    line-height: 1.2;
+.modal-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e64980;
+    margin-bottom: 10px;
 }
 
-.modal-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 196, 168, 0.3), transparent);
-    margin-bottom: 30px;
+#modal-title {
+    font-size: 1.8rem;
+    color: #3d232e;
+    margin-bottom: 20px;
 }
 
-.editorial-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #c0b8b0;
+.handwritten {
+    font-family: 'Caveat', cursive;
+    font-size: 1.85rem;
+    line-height: 1.5;
+    color: #4a2835;
     white-space: pre-wrap;
-    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.6rem; }
+    .spotify-card { justify-content: center; text-align: center; }
 }
