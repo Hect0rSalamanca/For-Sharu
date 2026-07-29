@@ -77,12 +77,12 @@ const sampleNotes = [
     "We look good (you are the one making us look good).",
     "Deserve it all.",
     "Pure happiness right here.",
-    "I brag about you to everyone, just so you know."
-    "If I could pause time, I would’ve paused it right here. 😚"
-    "Chivalry cleary not dead."
-    "😏😏😏😏"
-    "Love you YOUR life (sushi)."
-    "They cant even comprehend how far we have come."
+    "I brag about you to everyone, just so you know.",
+    "If I could pause time, I would’ve paused it right here. 😚",
+    "Chivalry cleary not dead.",
+    "😏😏😏😏",
+    "Love you YOUR life (sushi).",
+    "They cant even comprehend how far we have come.",
     "BEST TIME OF MY LIFE. PERIOD" 
 ];
 
