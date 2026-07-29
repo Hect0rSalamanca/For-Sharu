@@ -80,7 +80,7 @@ const sampleNotes = [
     "I brag about you to everyone, just so you know."
 ];
 
-for (let i = 10; i <= 30; i++) {
+for (let i = 10; i <= 25; i++) {
     polaroidsData.push({
         num: i,
         img: `photo${i}.jpg`, // Ensure you have photo10.jpg to photo30.jpg, or they will fallback cleanly
