@@ -2,56 +2,43 @@
 const letterData = [
     {
         id: "letter-bday",
-        title: "Open on your birthday night 🎉",
+        title: "To be opened on the evening of your birthday.",
         targetDate: "2026-08-02T20:00:00", 
-        content: "Write your birthday message here...",
-        joke: "Type a joke or sweet sign-off here..."
+        content: "Write your birthday message here..."
     },
     {
         id: "letter-freezing",
-        title: "Open when you miss me in freezing Georgia 🥶",
+        title: "For the nights when the Georgian winter feels too cold.",
         targetDate: "2026-12-01T00:00:00", 
-        content: "Write what you want to say when she's cold and homesick...",
-        joke: ""
+        content: "Write what you want to say when she's cold and homesick..."
     },
     {
         id: "letter-bds-hard",
-        title: "Open when BDS is kicking your ass 📚",
+        title: "When the weight of BDS feels insurmountable.",
         targetDate: "2026-10-15T00:00:00", 
-        content: "Write some encouragement for her dental exams here...",
-        joke: ""
+        content: "Write some encouragement for her dental exams here..."
     },
     {
         id: "letter-food",
-        title: "Open when you are craving Goan food 🍛",
+        title: "On the absence of proper Goan cuisine.",
         targetDate: "2026-09-20T00:00:00", 
-        content: "Write something about food here...",
-        joke: ""
-    },
-    {
-        id: "letter-fight",
-        title: "Open after our first stupid time-zone fight 🙄",
-        targetDate: "2026-11-01T00:00:00", 
-        content: "Write your apology or grounding message here...",
-        joke: ""
+        content: "Write something about food here..."
     },
     {
         id: "letter-doubt",
-        title: "Open when you question why you moved 5,000 km away ✈️",
+        title: "A reminder of why you crossed 5,000 kilometers.",
         targetDate: "2026-09-10T00:00:00", 
-        content: "Write a reality check on how proud you are of her...",
-        joke: ""
+        content: "Write a reality check on how proud you are of her..."
     },
     {
         id: "letter-win",
-        title: "Open when you ace your first practical at SEU 🏆",
+        title: "Upon the successful completion of your first practical.",
         targetDate: "2026-10-30T00:00:00", 
-        content: "Write your celebration message here...",
-        joke: ""
+        content: "Write your celebration message here..."
     }
 ];
 
-// --- 2. GENERATE THE CARDS WITH RANDOM ROTATIONS ---
+// --- 2. GENERATE THE LUXURY CARDS ---
 const grid = document.getElementById("letters-grid");
 
 letterData.forEach((letter) => {
@@ -59,12 +46,8 @@ letterData.forEach((letter) => {
     card.className = "card";
     card.id = `card-${letter.id}`;
     
-    // Gives each card that messy scrapbook tilt
-    const randomRotation = (Math.random() * 8) - 4; 
-    card.style.transform = `rotate(${randomRotation}deg)`;
-    
     card.innerHTML = `
-        <span class="locked-icon" id="icon-${letter.id}">🔒</span>
+        <span class="locked-icon" id="icon-${letter.id}">✧</span>
         <h3>${letter.title}</h3>
         <div class="countdown" id="cd-${letter.id}">Loading...</div>
     `;
@@ -85,15 +68,21 @@ function updateCountdowns() {
         const card = document.getElementById(`card-${letter.id}`);
 
         if (distance <= 0) {
-            cdElement.innerHTML = "✨ Click to open!";
-            cdElement.style.background = "#d4edda";
-            cdElement.style.color = "#155724";
-            iconElement.innerHTML = "💌";
+            cdElement.innerHTML = "AVAILABLE TO READ";
+            cdElement.style.color = "#d4c4a8"; // Champagne gold text
+            iconElement.innerHTML = "✦"; // Changed icon
+            iconElement.style.color = "#d4c4a8";
+            card.style.borderColor = "rgba(212, 196, 168, 0.4)";
         } else {
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            cdElement.innerHTML = `Unlocks in: ${days}d ${hours}h ${mins}m`;
+            
+            // Minimalist countdown display
+            if (days > 0) {
+                 cdElement.innerHTML = `UNLOCKS IN ${days} DAYS`;
+            } else {
+                 cdElement.innerHTML = `UNLOCKS IN ${hours} HOURS`;
+            }
         }
     });
 }
@@ -113,19 +102,11 @@ function handleCardClick(letter) {
         document.getElementById("modal-title").innerText = letter.title;
         document.getElementById("modal-body").innerText = letter.content;
         
-        const jokeBox = document.getElementById("modal-joke");
-        if(letter.joke !== "") {
-            jokeBox.style.display = "block";
-            jokeBox.innerText = letter.joke;
-        } else {
-            jokeBox.style.display = "none";
-        }
-        
         modal.style.display = "flex";
     } else {
-        // Reset animation so it can shake multiple times
+        // Minimalist shake
         card.style.animation = 'none';
-        card.offsetHeight; /* trigger reflow */
+        card.offsetHeight; 
         card.style.animation = null; 
         card.classList.add("shake");
         setTimeout(() => card.classList.remove("shake"), 400);
@@ -135,36 +116,4 @@ function handleCardClick(letter) {
 closeBtn.onclick = () => modal.style.display = "none";
 window.onclick = (event) => {
     if (event.target == modal) modal.style.display = "none";
-}
-
-// --- 5. AUTOMATIC HIGH-QUALITY CDN STICKERS ---
-// I sourced high-res 3D assets for her interests: Money, Cats, Flowers, Sushi, Ramen
-const stickerURLs = [
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Money%20with%20Wings.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Cat%20Face.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Tulip.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food/Sushi.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food/Steaming%20Bowl.png"
-];
-
-const container = document.getElementById("floating-stickers");
-
-for (let i = 0; i < 18; i++) {
-    let img = document.createElement("img");
-    img.src = stickerURLs[Math.floor(Math.random() * stickerURLs.length)];
-    img.className = "floating-sticker";
-    
-    // Vary the sizes slightly
-    let size = Math.floor(Math.random() * 40) + 40; 
-    img.style.width = size + "px";
-    
-    // Random placement across the screen
-    img.style.left = (Math.random() * 90) + "vw";
-    img.style.top = (Math.random() * 95) + "vh";
-    
-    // Random animation delays so they don't move in sync
-    img.style.animationDelay = (Math.random() * 5) + "s";
-    img.style.animationDuration = (8 + Math.random() * 7) + "s";
-    
-    container.appendChild(img);
 }
