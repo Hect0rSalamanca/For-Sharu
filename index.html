@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Shawu 🤍</title>
+    <title>For Sharayu 🤍</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Background Memory Photos & Interactive Stickers -->
+    <!-- Background Elements -->
     <div id="bg-photos-container"></div>
     <div id="floating-stickers"></div>
     <div class="glow-bg"></div>
@@ -19,36 +19,81 @@
     <!-- Floating Music Toggle -->
     <button id="music-toggle" class="music-pill">
         <span class="music-icon">🎵</span>
-        <span id="music-text">Tap anywhere for our song</span>
+        <span id="music-text">Tap anywhere for music</span>
     </button>
 
     <header class="header">
-        <div class="badge">SINCE IM NOT THERE IRL 💌</div>
-        <h1>For Shawu 🤍</h1>
-        <p class="subtitle">Open these letters whenever you miss me, a laugh, or a reminder of how proud I am of you.</p>
+        <div class="badge">TBILISI & SEU SURVIVAL KIT 💌</div>
+        <h1>For Sharayu 🤍</h1>
+        <p class="subtitle">Your personal comfort page. Come here whenever you need home, a laugh, or a reminder that I've got your back.</p>
     </header>
 
     <main class="container">
-        <!-- Spotify Special Playlist Feature -->
-        <section class="spotify-section">
+        <!-- SECTION 1: SPOTIFY VIP PLAYLIST -->
+        <section class="section-block">
             <div class="spotify-card">
                 <div class="spotify-info">
-                    <span class="tag">SPECIAL PLAYLIST 🎧</span>
-                    <h3>Made Especially For You</h3>
-                    <p>Made this cus you love music.</p>
+                    <span class="tag">OUR PLAYLIST 🎧</span>
+                    <h3>Made Just For You</h3>
+                    <p>Scan this code on Spotify whenever you miss my vibe.</p>
                 </div>
                 <div class="spotify-code-wrapper">
-                    <!-- Replace 'spotify-code.png' with your actual Spotify code image -->
-                    <img src="spotify-code.png" alt="Spotify Playlist Code" class="spotify-code-img" onerror="this.src='https://placehold.co/240x60/ffe3eb/e64980?text=Add+spotify-code.png';">
+                    <!-- Replace 'spotify-code.png' with your Spotify image -->
+                    <img src="spotify-code.png" alt="Spotify Code" class="spotify-code-img" onerror="this.src='https://placehold.co/220x60/ffe3eb/e64980?text=Add+spotify-code.png';">
                 </div>
             </div>
         </section>
 
-        <!-- Letters Grid -->
-        <div id="letters-grid" class="letters-grid"></div>
+        <!-- SECTION 2: THE 50 REASONS JAR -->
+        <section class="section-block text-center">
+            <div class="section-badge">DAILY BOOST</div>
+            <h2 class="section-title">50 Reasons Why I Love You 🍯</h2>
+            <p class="section-desc">Tap the jar anytime you want a quick reminder of why you're my favorite person.</p>
+            
+            <div class="jar-container">
+                <button id="jar-btn" class="jar-btn">
+                    <span class="jar-icon">🍯</span>
+                    <span class="jar-label">Tap to pull a reason!</span>
+                </button>
+                <div id="reason-display" class="reason-display hidden">
+                    <p id="reason-text"></p>
+                    <button id="another-reason-btn" class="small-btn">Pull Another Reason ✨</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DIGITAL LOVE COUPONS -->
+        <section class="section-block">
+            <div class="text-center">
+                <div class="section-badge">NO EXPIRATION DATE</div>
+                <h2 class="section-title">Love Coupons 🎟️</h2>
+                <p class="section-desc">Tap to redeem any of these. Take a screenshot of the redeemed tag and send it to me!</p>
+            </div>
+            <div id="coupons-grid" class="coupons-grid"></div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE FLIP POLAROIDS (#10 to #30) -->
+        <section class="section-block">
+            <div class="text-center">
+                <div class="section-badge">MEMORIES</div>
+                <h2 class="section-title">Our Story (#10 – #30) 📸</h2>
+                <p class="section-desc">Swipe horizontally & tap any photo to flip it over for a secret note.</p>
+            </div>
+            <div id="polaroid-slider" class="polaroid-slider"></div>
+        </section>
+
+        <!-- SECTION 5: LOCKED TIME-CAPSULE LETTERS -->
+        <section class="section-block">
+            <div class="text-center">
+                <div class="section-badge">TIME CAPSULES</div>
+                <h2 class="section-title">Locked Letters 💌</h2>
+                <p class="section-desc">These will unlock automatically on the exact days you'll need them most.</p>
+            </div>
+            <div id="letters-grid" class="letters-grid"></div>
+        </section>
     </main>
 
-    <!-- Modal Popup -->
+    <!-- Modal Popup for Letters -->
     <div id="letter-modal" class="modal">
         <div class="modal-content glass-card">
             <span class="close-btn">&times;</span>
