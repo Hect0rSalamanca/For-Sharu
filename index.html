@@ -3,33 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S. — The Georgia Collection</title>
+    <title>For Shawu 🤍</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="ambient-background"></div>
+    <!-- Background Memory Photos & Interactive Stickers -->
+    <div id="bg-photos-container"></div>
+    <div id="floating-stickers"></div>
+    <div class="glow-bg"></div>
 
-    <header class="editorial-header">
-        <p class="eyebrow">A CURATED COLLECTION</p>
-        <h1>For Sharayu</h1>
-        <div class="divider"></div>
-        <p class="subtitle">Notes for Tbilisi. To be opened strictly on their designated dates.</p>
+    <!-- Background Audio (Replace 'song.mp3' with your audio file) -->
+    <audio id="bg-music" loop src="song.mp3"></audio>
+
+    <!-- Floating Music Toggle -->
+    <button id="music-toggle" class="music-pill">
+        <span class="music-icon">🎵</span>
+        <span id="music-text">Tap anywhere for our song</span>
+    </button>
+
+    <header class="header">
+        <div class="badge">TBILISI & SEU SURVIVAL KIT 💌</div>
+        <h1>For Shawu 🤍</h1>
+        <p class="subtitle">Open these exact letters whenever you need home, a laugh, or a reminder of how proud I am of you.</p>
     </header>
 
     <main class="container">
-        <div id="letters-grid" class="luxury-grid"></div>
+        <!-- Spotify Special Playlist Feature -->
+        <section class="spotify-section">
+            <div class="spotify-card">
+                <div class="spotify-info">
+                    <span class="tag">SPECIAL PLAYLIST 🎧</span>
+                    <h3>Made Especially For You</h3>
+                    <p>Scan this code on Spotify whenever you miss my vibe.</p>
+                </div>
+                <div class="spotify-code-wrapper">
+                    <!-- Replace 'spotify-code.png' with your actual Spotify code image -->
+                    <img src="spotify-code.png" alt="Spotify Playlist Code" class="spotify-code-img" onerror="this.src='https://placehold.co/240x60/ffe3eb/e64980?text=Add+spotify-code.png';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Letters Grid -->
+        <div id="letters-grid" class="letters-grid"></div>
     </main>
 
-    <!-- The Minimalist Modal -->
+    <!-- Modal Popup -->
     <div id="letter-modal" class="modal">
-        <div class="modal-content premium-paper">
+        <div class="modal-content glass-card">
             <span class="close-btn">&times;</span>
-            <p class="modal-eyebrow">ARCHIVE RECORD</p>
-            <h2 id="modal-title" class="serif-title"></h2>
-            <div class="modal-divider"></div>
-            <div id="modal-body" class="editorial-text"></div>
+            <div class="modal-tag">SPECIAL DELIVERY 💌</div>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body" class="handwritten"></div>
         </div>
     </div>
 
