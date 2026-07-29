@@ -5,131 +5,126 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    /* Grid paper background */
-    background-color: #fff4f7;
-    background-image: linear-gradient(#ffccd5 1px, transparent 1px), linear-gradient(90deg, #ffccd5 1px, transparent 1px);
-    background-size: 25px 25px;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
     overflow-x: hidden;
+}
+
+/* Subtle, expensive ambient lighting effect */
+.ambient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 0%, rgba(45, 20, 30, 0.4) 0%, rgba(10, 10, 10, 1) 70%);
+    z-index: -1;
 }
 
 /* Typography */
 h1 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 4rem;
-    color: #ff477e;
-    text-shadow: 3px 3px 0px #ffb3c6, 6px 6px 0px #fff;
-    transform: rotate(-2deg);
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #f4f4f4;
+    margin: 10px 0;
+}
+
+.eyebrow, .modal-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #a89f91;
+    font-weight: 500;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    background: #ffeaee;
-    display: inline-block;
-    padding: 5px 15px;
-    border: 2px dashed #ff477e;
-    transform: rotate(1deg);
+    font-size: 1rem;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 0.5px;
 }
 
-.scrapbook-header {
+.divider {
+    width: 40px;
+    height: 1px;
+    background-color: #d4c4a8; /* Champagne gold */
+    margin: 20px auto;
+}
+
+.editorial-header {
     text-align: center;
-    padding: 50px 20px 30px;
-    position: relative;
-    z-index: 2;
+    padding: 10vh 20px 5vh;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 40px 100px;
+    padding: 0 40px 100px;
 }
 
-.letters-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+/* The Luxury Grid */
+.luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-/* The Polaroid/Scrapbook Cards */
+/* Premium Card Styling */
 .card {
-    background: #fff;
-    width: 280px;
-    padding: 20px 20px 30px 20px;
-    box-shadow: 4px 6px 15px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    text-align: center;
     cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-bottom: 5px solid #ffccd5;
+    overflow: hidden;
 }
 
 .card:hover {
-    box-shadow: 8px 12px 25px rgba(0,0,0,0.2);
-    z-index: 10 !important;
-}
-
-/* Washi Tape Effect */
-.card::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-3deg);
-    width: 100px;
-    height: 30px;
-    background: rgba(255, 182, 193, 0.7);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    z-index: 5;
-}
-
-/* Alternate tape colors */
-.card:nth-child(even)::before {
-    background: rgba(173, 216, 230, 0.7);
-    transform: translateX(-50%) rotate(4deg);
-}
-.card:nth-child(3n)::before {
-    background: rgba(255, 235, 153, 0.7);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 196, 168, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    color: #444;
-    margin-bottom: 15px;
-    line-height: 1.3;
-    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #f4f4f4;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .countdown {
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: #ff477e;
-    background: #ffe4e8;
-    padding: 8px;
-    border-radius: 5px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a89f91;
 }
 
 .locked-icon {
-    font-size: 3rem;
+    font-size: 1.2rem;
     display: block;
-    text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    color: #555;
 }
 
-/* Shake Animation */
-.shake { animation: shake 0.4s ease-in-out; }
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px) rotate(-5deg); }
-    50% { transform: translateX(10px) rotate(5deg); }
-    75% { transform: translateX(-10px) rotate(-5deg); }
-    100% { transform: translateX(0); }
+/* Minimalist Shake Animation for Locked State */
+.shake { animation: subtle-shake 0.4s ease; }
+@keyframes subtle-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
 }
 
-/* Modal Popup */
+/* --- Premium Modal --- */
 .modal {
     display: none;
     position: fixed;
@@ -138,72 +133,59 @@ h1 {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
-.scrapbook-paper {
-    background: #fffdf5;
-    max-width: 600px;
+.premium-paper {
+    background: #111;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+    max-width: 650px;
     width: 100%;
-    padding: 40px;
+    padding: 60px;
     position: relative;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 10px 10px 0px rgba(255, 71, 126, 0.3);
-    border: 2px solid #333;
 }
 
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 35px;
-    font-weight: bold;
-    color: #333;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: 300;
+    color: #666;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.fun-font {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    color: #ff477e;
-    margin-bottom: 20px;
+.close-btn:hover { color: #d4c4a8; }
+
+.serif-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #f4f4f4;
+    margin: 15px 0 25px;
+    line-height: 1.2;
 }
 
-.handwritten {
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    line-height: 1.4;
-    color: #2b2b2b;
+.modal-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 196, 168, 0.3), transparent);
+    margin-bottom: 30px;
+}
+
+.editorial-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c0b8b0;
     white-space: pre-wrap;
-}
-
-.joke-box {
-    background: #e6f7ff;
-    padding: 15px;
-    margin-top: 30px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    border: 2px dashed #00a8ff;
-    color: #0077b6;
-    transform: rotate(1deg);
-}
-
-/* Floating CDN Stickers */
-.floating-sticker {
-    position: fixed;
-    pointer-events: none; /* So she can click through them */
-    z-index: 50;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
-    animation: float-around infinite ease-in-out;
-}
-
-@keyframes float-around {
-    0% { transform: translateY(0px) rotate(0deg) scale(1); }
-    50% { transform: translateY(-30px) rotate(15deg) scale(1.1); }
-    100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    font-style: italic;
 }
