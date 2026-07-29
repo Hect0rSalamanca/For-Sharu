@@ -68,19 +68,25 @@ const couponsData = [
 // --- 3. FLIP POLAROIDS (#10 to #30 = 21 Photos) ---
 const polaroidsData = [];
 const sampleNotes = [
-    "You looked so pretty here I actually forgot what I was saying.",
+    "The reason we are together.",
     "One of my favorite memories with you ever.",
-    "I keep this picture on my phone just to look at when I miss you.",
-    "Still can't believe I got lucky enough to pull you.",
-    "You were laughing so hard here—I love this day.",
+    "In case you forgot how much i adore you.",
+    "One of my favorite memories with you ever",
+    "Felt like those college couples on the scooter, I love this day.",
     "My absolute favorite look on you.",
-    "Remember this? We need to recreate this as soon as you're back.",
-    "You make everything look effortless.",
+    "We look good (you are the one making us look good).",
+    "Deserve it all.",
     "Pure happiness right here.",
     "I brag about you to everyone, just so you know."
+    "If I could pause time, I would’ve paused it right here. 😚"
+    "Chivalry cleary not dead."
+    "😏😏😏😏"
+    "Love you YOUR life (sushi)."
+    "They cant even comprehend how far we have come."
+    "BEST TIME OF MY LIFE. PERIOD" 
 ];
 
-for (let i = 10; i <= 30; i++) {
+for (let i = 10; i <= 25; i++) {
     polaroidsData.push({
         num: i,
         img: `photo${i}.jpg`, // Ensure you have photo10.jpg to photo30.jpg, or they will fallback cleanly
