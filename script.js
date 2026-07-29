@@ -100,7 +100,13 @@ const letterData = [
         id: "letter-bday",
         title: "Open on your birthday night 🎂",
         targetDate: "2026-08-02T20:00:00",
-        content: "Happy birthday my love! Even though you're in Tbilisi..."
+        content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your irst with me and it feels everything but a birthday because we both know whats "
+    },
+    {
+        id: "letter-test",
+        title: "Open on your test night 🎂",
+        targetDate: "2026-07-02T20:00:00",
+        content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your irst with me and it feels everything but a birthday because we both know whats "
     },
     {
         id: "letter-freezing",
