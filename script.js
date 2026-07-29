@@ -110,26 +110,26 @@ const letterData = [
     },
     {
         id: "letter-bds-hard",
-        title: "Open when acedamics get hard 🦷",
-        targetDate: "2026-10-15T00:00:00",
+        title: "Open when acedamics pull up to your butt 🦷",
+        targetDate: "2026-10-20T00:00:00",
         content: "I know dentistry is brutal right now, but remember how hard you worked..."
     },
     {
         id: "letter-food",
         title: "Open when craving sushi & ramen 🍜",
-        targetDate: "2026-09-20T00:00:00",
+        targetDate: "2026-10-05T00:00:00",
         content: "Hostel food sucks, I know. But the second you're back..."
     },
     {
         id: "letter-doubt",
         title: "Open when questioning moving 5,000 km away ✈️",
-        targetDate: "2026-09-10T00:00:00",
+        targetDate: "2026-09-22T00:00:00",
         content: "Moving to another country at our age is scary as hell, but I am so proud..."
     },
     {
         id: "letter-win",
-        title: "Open when you ace your first test 🏆",
-        targetDate: "2026-10-30T00:00:00",
+        title: "Open when you BANG your first test 🏆",
+        targetDate: "2026-11-10T00:00:00",
         content: "I TOLD YOU SO! You're going to be the best dentist ever..."
     }
 ];
