@@ -13,7 +13,6 @@ body {
     overflow-x: hidden;
     position: relative;
     padding-bottom: 50px;
-    isolation: isolate; /* Ensures negative z-index pseudo-elements render above body background */
 }
 
 /* Soft Blush Background Glow */
@@ -539,30 +538,4 @@ h1 {
         justify-content: space-between;
         text-align: left;
     }
-}
-
-/* Ambient Background Glows */
-body::before, 
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.35;
-    z-index: -1;
-    pointer-events: none;
-}
-
-body::before {
-    background: #ffb7c5; /* Soft pink */
-    top: -50px;
-    left: -50px;
-}
-
-body::after {
-    background: #d8b4fe; /* Soft lavender */
-    bottom: -50px;
-    right: -50px;
 }
