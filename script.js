@@ -322,17 +322,41 @@ bgPhotos.forEach((src, index) => {
 });
 
 // --- 12. FLOATING CUTESY INTERACTIVE STICKERS ---
-const stickerAssets = [
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Cat%20Face.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bouquet.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food/Steaming%20Bowl.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food/Sushi.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Two%20Hearts.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People%20with%20professions/Health%20Worker.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Airplane.png",
-    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Sparkles.png"
-];
+// --- 12. FLOATING CUTESY INTERACTIVE STICKERS (Bulletproof Native Emojis) ---
+const stickerAssets = ["🐱", "💐", "🍜", "🍣", "💕", "👩‍⚕️", "✈️", "✨", "🦷", "💖"];
 
+const stickerContainer = document.getElementById("floating-stickers");
+
+for (let i = 0; i < 14; i++) {
+    let el = document.createElement("span");
+    el.innerText = stickerAssets[i % stickerAssets.length];
+    el.className = "floating-sticker";
+    
+    let size = Math.floor(Math.random() * 18) + 32; // Font size between 32px and 50px
+    el.style.fontSize = size + "px";
+    el.style.position = "absolute";
+    el.style.left = (Math.random() * 86 + 5) + "vw";
+    el.style.top = (Math.random() * 86 + 5) + "vh";
+    el.style.animationDelay = (Math.random() * 4) + "s";
+    el.style.animationDuration = (6 + Math.random() * 5) + "s";
+    el.style.userSelect = "none";
+    el.style.cursor = "pointer";
+    el.style.display = "inline-block";
+    el.style.transition = "transform 0.3s ease";
+    
+    el.addEventListener("mouseover", () => {
+        const randomX = (Math.random() - 0.5) * 140;
+        const randomY = (Math.random() - 0.5) * 140;
+        el.style.transform = `translate(${randomX}px, ${randomY}px) scale(1.2)`;
+    });
+
+    el.addEventListener("click", () => {
+        el.style.transform = "scale(1.5) rotate(360deg)";
+        setTimeout(() => el.style.transform = "scale(1) rotate(0deg)", 400);
+    });
+
+    stickerContainer.appendChild(el);
+}
 const stickerContainer = document.getElementById("floating-stickers");
 
 for (let i = 0; i < 14; i++) {
