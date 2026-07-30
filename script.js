@@ -81,9 +81,9 @@ const sampleNotes = [
     "If I could pause time, I would’ve paused it right here. 😚",
     "Chivalry cleary not dead.",
     "😏😏😏😏",
-    "Love you YOUR life (sushi).",
+    "Love of YOUR life (sushi).",
     "They cant even comprehend how far we have come.",
-    "BEST TIME OF MY LIFE. PERIOD"
+    "BEST TIME OF MY LIFE. PERIOD."
 ];
 
 for (let i = 10; i <= 25; i++) {
@@ -101,12 +101,6 @@ const letterData = [
         title: "Open on your birthday night 🎂",
         targetDate: "2026-08-02T20:00:00",
         content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your first with me and it feels everything but a birthday because we both know how huge of a step youre taking, but before we start stressing and arguing, let me be hoenst with you. I am incredibly proud of you, you have been such an ideal human for the past month from mkaing stern decisoins about your education to dealing with every single logistics without taking much help from you parents and well obv dealing with me cus ik i have been difficult. The effort youre putting in almost guarantees your sucess. You are going to be an amazing Dentist and I cant wait to attend your graduation 🥰. I cant lie being with each other hasnt been the easiest lately but thats what makes our realtionship so much more worth it, the resillience to stick with each other, to always come to conclusions and most importnantly to never give up on us. You are not just my girl, wallahi you are my best friend. youre the one person i can completely drop my guard around and make me want to be the best versoin of myself only because you deseve the best things in the world. Weather we are fighting for hours or goofing around or sitting in silence everything just feels like home, like it will all end up well, the way you make the varun dhawan face your smirky face ur habit of cutely putting ur hair behind ur ears, the way you get soo excited when you order food or something for yourself its all so comforting. The next year is going to be huge for both of us, we will going through one of the biggest changes in our lives mentally, emotionally and physically. Its going to be challenging and exciting, if you ever feel overwhelmed you can alwys come to me i promise to be your safe space. WE are going to last forever, Sharayu, i will make sure of that.  Happy birthday, i love you the most my better half.  "
-    },
-    {
-        id: "letter-test",
-        title: "Open on your test night 🎂",
-        targetDate: "2026-07-02T20:00:00",
-        content: "Happy birthday my love!, Ive been thinking about what to write  and its so hard to verbalize how deeply i feel towards you but ill try my best. This birthday is your first with me and it feels everything but a birthday because we both know how huge of a step youre taking, but before we start stressing and arguing, let me be hoenst with you. I am incredibly proud of you, you have been such an ideal human for the past month from mkaing stern decisoins about your education to dealing with every single logistics without taking much help from you parents and well obv dealing with me cus ik i have been difficult. The effort youre putting in almost guarantees your sucess. You are going to be an amazing Dentist and I cant wait to attend your graduation 🥰. I cant lie being with each other hasnt been the easiest lately but thats what makes our realtionship so much more worth it, the resillience to stick with each other, to always come to conclusions and most importnantly to never give up on us. You are not just my girl, wallahi you are my best friend. youre the one person i can completely drop my guard around and make me want to be the best versoin of myself only because you deseve the best things in the world. Weather we are fighting for hours or goofing around or sitting in silence everything just feels like home, like it will all end up well, the way you make the varun dhawan face your smirky face ur habit of cutely putting ur hair behind ur ears, the way you get soo excited when you order food or something for yourself its all so comforting. The next year is going to be huge for both of us, we will going through one of the biggest changes in our lives mentally, emotionally and physically. Its going to be challenging and exciting, if you ever feel overwhelmed you can alwys come to me i promise to be your safe space. WE are going to last forever, Sharayu, i will make sure of that.  Happy birthday, i love you the most my better half. "
     },
     {
         id: "letter-freezing",
